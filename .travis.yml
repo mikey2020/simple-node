@@ -8,7 +8,6 @@ services:
 # Pre-testing installs
 install:
   - echo "Nothing needs to be installed"
-  - echo "$PHRASE"
 
 # Scripts to be run such as tests
 before_script:
@@ -16,7 +15,7 @@ before_script:
 
 script:
   - docker --version # print the version for logging
-  - docker build -t simple-node .
+  - docker build -t simple-node --build-arg PHRASE=${PHRASE} .
   - docker tag simple-node supermike2020/simple-node:latest
 
 # Tasks to perform after the process is successful. Formatting the Docker username and password as below enables you to programmatically log in without having the password exposed in logs.

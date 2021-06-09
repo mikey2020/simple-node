@@ -8,6 +8,7 @@ services:
 # Pre-testing installs
 install:
   - echo "Nothing needs to be installed"
+  - echo "$PHRASE"
 
 # Scripts to be run such as tests
 before_script:
